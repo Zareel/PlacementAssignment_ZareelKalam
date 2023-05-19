@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  position: relative;
+}
+.text {
+  font-size: 5px;
+}
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+section > div {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+  margin-top: 5px;
+}
+.col2 {
+  margin-right: 15px;
+}
+.text {
+  font-size: 15px;
+}
+.pink {
+  background-color: pind;
+}
+.blue {
+  background-color: #ababe6;
+}
+.green {
+  background-color: #8bdb8b;
+}
+.blank {
+  background-color: white;
+}
+.white {
+  background-color: white;
+}
+.yellow {
+  background-color: #f1f193;
+}
+.bottom-rows {
+  margin-top: 18px;
+}
+.star1 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 60%;
+}
+.star2 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 70%;
+}
+.star3 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 74%;
+}
+.star4 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 82%;
+}
+.star5 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 92%;
+}
+.star6 {
+  position: absolute;
+  font-size: 25px;
+  left: 26.2%;
+  top: 96%;
+}
