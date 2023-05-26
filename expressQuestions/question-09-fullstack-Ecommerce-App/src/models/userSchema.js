@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "Password is required"],
-      minLength: [8, "Password should contain atleast 8 chars"],
     },
     phone: {
       type: Number,
@@ -28,10 +27,10 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+
     role: {
-      type: String,
-      enum: Object.values(AuthRoles),
-      default: AuthRoles.USER,
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true }

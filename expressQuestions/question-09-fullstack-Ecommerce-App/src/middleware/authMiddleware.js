@@ -1,54 +1,29 @@
-import User from "../models/userSchema.js";
 import JWT from "jsonwebtoken";
 import config from "../config/index.js";
+import User from "../models/userSchema.js";
+import AuthRoles from "../utils/authRoles.js";
 
+//Protected Routes token base
 export const isLoggedIn = async (req, res, next) => {
   try {
-    let token;
-    if (
-      req.cookies.token ||
-      (req.header.authorization &&
-        req.header.authorization.startsWith("Bearer"))
-    ) {
-      token = req.cookies.token || req.header.authorization.split(" ")[1];
-      //token = "Bearer ijioj[poijwpdsjijrio"
-    }
-    if (!token) {
-      res.status(401).json({
-        success: false,
-        message: "Not autherized to this resource",
-      });
-    }
-    const decodedJWTpayload = JWT.verify(token, config.JWT_SECRET);
-    req.user = await User.findById(decodedJWTpayload._id, "name email, role");
+    const decode = JWT.verify(req.headers.authorization, config.JWT_SECRET);
+    req.user = decode;
     next();
   } catch (error) {
     console.log(error);
   }
 };
 
-export const autherize =
-  (...requiredRoles) =>
-  async (req, res, next) => {
-    try {
-      if (!requiredRoles.includes(req.user.role)) {
-        res.send(error, "You are not autherized to access this resource");
-      }
-    } catch (error) {
-      res.status(401).json({
-        success: false,
-        message: "Error in autherize",
-      });
-    }
-  };
+//admin acceess
 
+//admin acceess
 export const isAdmin = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);
-    if (user.role !== config.ADMIN) {
+    if (user.role !== 1) {
       return res.status(401).json({
         success: false,
-        message: "Unautherized access",
+        message: "UnAuthorized Access",
       });
     } else {
       next();
@@ -57,7 +32,8 @@ export const isAdmin = async (req, res, next) => {
     console.log(error);
     res.status(401).json({
       success: false,
-      message: "Error in admin middleware",
+      error,
+      message: "Error in admin middelware",
     });
   }
 };

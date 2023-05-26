@@ -96,3 +96,7 @@ export const login = async (req, res) => {
     });
   }
 };
+
+export const test = async (req, res) => {
+  res.send("Protected route");
+};
