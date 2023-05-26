@@ -1,35 +1,40 @@
 import mongoose from "mongoose";
-import AuthRoles from "../utils/authRoles";
+import AuthRoles from "../utils/authRoles.js";
 
-const userSchema = new mongoose.Schema = ({
-    name:{
-        type: String,
-        required: [true, "Name is required"],
-        trim: true,
-        maxLength:[32, "Name should not exceed 32 chars"]
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Name is required"],
+      trim: true,
+      maxLength: [32, "Name should not exceed 32 chars"],
     },
-    lastName:{
-        type: String,
-        required:[true, "Last name is required"],
-        trim: true,
-        maxLength:[32, "lastName shoule not exceed 32 chars"]
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      unique: true,
     },
-    email:{
-        type: String,
-        required:[true, "Email is required"]
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+      minLength: [8, "Password should contain atleast 8 chars"],
     },
-    password:{
-        type: String,
-        required: [true, "Password is required"],
-        minLength:[8, "Password should contain atleast 8 chars"]
+    phone: {
+      type: Number,
+      rquired: true,
+    },
+    address: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    role: {
+      type: String,
+      enum: Object.values(AuthRoles),
+      default: AuthRoles.USER,
+    },
+  },
+  { timestamps: true }
+);
 
-    },
-    role:{
-        type: String,
-        enum: Object.values(AuthRoles),
-        default: AuthRoles.USER
-    }
-
-},{timestamps: true}) 
-
-export default mongoose.model("User", userSchema)
+export default mongoose.model("User", userSchema);

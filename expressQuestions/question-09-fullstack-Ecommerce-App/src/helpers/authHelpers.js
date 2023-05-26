@@ -1,4 +1,4 @@
-import bcrypt, { compare } from "bcryptjs";
+import bcrypt from "bcryptjs";
 
 export const hashPassword = async (passward) => {
   try {
