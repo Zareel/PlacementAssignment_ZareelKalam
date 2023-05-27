@@ -1,5 +1,10 @@
 import express from "express";
-import { signup, login, test } from "../controller/authController.js";
+import {
+  signup,
+  login,
+  test,
+  forgotPassword,
+} from "../controller/authController.js";
 import { isAdmin, isLoggedIn } from "../middleware/authMiddleware.js";
 
 //router object
@@ -14,5 +19,13 @@ router.post("/login", login);
 
 //test route || method get
 router.get("/testroute", isLoggedIn, isAdmin, test);
+
+// protected route auth => client => user => dashboard
+router.get("/user-auth", isLoggedIn, (req, res) => {
+  res.status(200).json({ ok: true });
+});
+
+// forgot password || post
+router.post("/forgot-password", forgotPassword);
 
 export default router;

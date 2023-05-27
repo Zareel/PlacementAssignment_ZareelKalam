@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title="About us- smartBazar">
       <div className="max-w-6xl mx-auto py-6">
         <div className="w-full flex flex-col lgl:flex-row justify-between items-center lgl:gap-10">
           <div className="w-[80%] mdl:w-[50%] h-[65vh] flex justify-center items-center ">
@@ -14,10 +14,8 @@ const About = () => {
             />
           </div>
           <div className="w-[80%] mdl:w-[50%] flex flex-col justify-center items-center gap-2">
-            <h1 className="text-5xl font-roboto text-gray-900 pb-2">
-              About Us
-            </h1>
-            <p className="text-center">
+            <h1 className="text-5xl font-roboto text-blue pb-2">About Us</h1>
+            <p className="text-center text-gray-500">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
               error maxime molestias quo? Id accusamus sed molestias officiis
               qui debitis impedit, ipsa illo quod cum eum incidunt odit

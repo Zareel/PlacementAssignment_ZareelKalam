@@ -2,14 +2,28 @@ import React from "react";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/auth";
+import { toast } from "react-hot-toast";
 
 const Header = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
+  const [auth, setAuth] = useAuth();
+
+  const handleLogout = () => {
+    setAuth({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+    toast.success("Logged out successfull");
+  };
   return (
     <div className="w-full sticky top-0 z-50">
       <nav
-        className={`max-w-7xl mx-auto  py-6 flex justify-between  items-center  gap-4 transition-all ease-in duration-500 ${
+        className={`max-w-7xl mx-auto  py-6 flex justify-between z-50  items-center  gap-4 transition-all ease-in duration-500 ${
           extendNavbar ? "pb-44" : "pb-6"
         }`}
       >
@@ -43,24 +57,40 @@ const Header = () => {
             >
               Contact
             </NavLink>
-            <NavLink
-              to="/login"
-              className="cursor-pointer font-poppins  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to="/signup"
-              className="cursor-pointer font-poppins  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
-            >
-              SignUp
-            </NavLink>
+            {!auth.user ? (
+              <div>
+                <NavLink
+                  to="/login"
+                  className="cursor-pointer font-poppins  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300 mr-4 "
+                >
+                  Login
+                </NavLink>
+                <NavLink
+                  to="/signup"
+                  className="border border-violet-500 hover:bg-violet-200 py-1 px-6 my-6 font-poppins  rounded-sm cursor-pointer   text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
+                >
+                  SignUp
+                </NavLink>
+              </div>
+            ) : (
+              <div>
+                <NavLink
+                  onClick={handleLogout}
+                  to="/signup"
+                  className="border border-violet-500 hover:bg-violet-200 py-1 px-6 my-6 font-poppins rounded-sm cursor-pointer  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
+                >
+                  Logout
+                </NavLink>
+              </div>
+            )}
+
             <div className="flex items-center">
               <NavLink
                 to="/cart"
-                className="px-6 cursor-pointer relative text-lg"
+                className="px-6 cursor-pointer relative text-lg text-gray-500 hover:text-violet-400"
               >
-                🛒 <span className="absolute">0</span>
+                <ShoppingCartIcon />{" "}
+                <span className="absolute hover:text-violet-400">0</span>
               </NavLink>
               <NavLink
                 onClick={() => {

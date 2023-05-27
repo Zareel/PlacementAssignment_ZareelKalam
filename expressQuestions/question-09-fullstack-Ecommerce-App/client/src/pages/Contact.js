@@ -6,7 +6,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title="ContactUs - smartBazar">
       <div className="max-w-6xl mx-auto">
         <div className="w-full flex flex-col lgl:flex-row justify-between items-center">
           <div className="w-[80%] mdl:w-[50%] h-[65vh] flex justify-center items-center">
@@ -17,35 +17,35 @@ const Contact = () => {
             />
           </div>
           <div className="w-full mdl:w-[50%] flex flex-col justify-center items-center gap-2">
-            <h1 className="text-5xl font-roboto text-gray-900 py-2">
-              Contact Us
-            </h1>
-            <p className="text-md mdl:text-xl  text-gray-800 font-semibold">
+            <h1 className="text-5xl font-roboto text-blue py-2">Contact Us</h1>
+            <p className="text-md mdl:text-xl  text-gray-500 font-semibold">
               Get the info you are looking for right
               <span className="text-green-500 font-bold text-xl px-2">Now</span>
             </p>
-            <p className="text-xl text-grya-800 font-semibold">
+            <p className="text-xl text-gray-500 font-semibold">
               We are here{" "}
               <span className="text-green-500 font-bold text-xl">24/7</span>
             </p>
             <div className="py-6 flex flex-col gap-2">
               <div>
-                <span className="px-4">
+                <span className="px-4 text-gray-500">
                   <EmailIcon />
                 </span>
-                <span>: www.service@clicktocart.com</span>
+                <span className="text-gray-500">
+                  : www.service@clicktocart.com
+                </span>
               </div>
               <div>
-                <span className="px-4">
+                <span className="px-4 text-gray-500">
                   <CallIcon />
                 </span>
-                <span>:012-9123459874</span>
+                <span className="text-gray-500">:012-9123459874</span>
               </div>
               <div>
-                <span className="px-4">
+                <span className="px-4 text-gray-500">
                   <WhatsAppIcon />
                 </span>
-                <span>: what's app</span>
+                <span className="text-gray-500">: what's app</span>
               </div>
             </div>
           </div>

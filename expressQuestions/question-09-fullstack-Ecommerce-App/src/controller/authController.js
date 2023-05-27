@@ -9,14 +9,14 @@ export const signup = async (req, res) => {
     const { name, email, password, phone, address } = req.body;
     //validation
     if (!name || !email || !password || !phone || !address) {
-      return res.send({ error: "All the fields are required" });
+      return res.send({ message: "All the fields are required" });
     }
     // check if the user is already existing
     const existingUser = await User.findOne({ email });
     // if user is existing send message
     if (existingUser) {
       return res.status(200).json({
-        success: true,
+        success: false,
         message: "Already signed up, please login",
       });
     }
@@ -99,4 +99,36 @@ export const login = async (req, res) => {
 
 export const test = async (req, res) => {
   res.send("Protected route");
+};
+
+export const forgotPassword = async (req, res) => {
+  try {
+    const { email, answer, newPassword } = req.body;
+    if (!email || answer || !newPassword) {
+      res.status(400).json({ message: "All the fields are required" });
+    }
+    //check
+    const user = await User.findOne({ email });
+    //validation
+    if (!user) {
+      res.status(401).json({
+        success: false,
+        message: "Wrong email or answer",
+      });
+    }
+    // if user exists hash password
+    const hashed = await hashPassword(newPassword);
+    await User.findByIdAndUpdate(user._id, { password: hashed });
+    res.status(200).json({
+      success: true,
+      message: "Password reset successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error,
+    });
+  }
 };
