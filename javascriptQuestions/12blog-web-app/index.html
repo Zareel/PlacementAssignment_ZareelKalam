@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            font: {
+              roboto: "roboto",
+              poppins: "poppins",
+            },
+            screen: {
+              lg: "950px",
+              md: "650px",
+              sm: "512",
+            },
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Blog App</title>
+  </head>
+  <body>
+    <header class="w-full h-[100px]">
+      <nav
+        class="max-w-[85vw] mx-auto flex justify-between items-center font-poppins py-6 pr-2 lg:pr-0"
+      >
+        <img
+          class="w-[100px] md:w-[150px] lg:w-56"
+          src="./blog.png"
+          alt="logo"
+        />
+        <div class="flex">
+          <ul
+            class="hidden lg:flex items-center gap-8 px-10 text-md text-base text-gray-500"
+          >
+            <li
+              class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
+            >
+              <a href="/">Home</a>
+            </li>
+            <li
+              class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
+            >
+              <a href="#">About</a>
+            </li>
+            <li
+              class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
+            >
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+
+          <form action="/search.html" method="get" class="flex">
+            <input
+              type="text"
+              name="query"
+              placeholder="Search for Articles"
+              class="flex flex-grow rounded-sm text-sm md:text-md text-gray-200"
+            />
+            <button
+              class="bg-gray-300 py-1 px-4 rounded-sm text-sm md:text-base lg:text-lg text-gray-700 hover:text-pink-800 hover:bg-pink-300"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main class="w-full h-full">
+      <section
+        class="max-w-[60vw] mx-auto flex flex-col-reverse lg:flex-row lg:py-20"
+      >
+        <div class="flex flex-col justify-center items-center lg:items-start">
+          <h1
+            class="font-roboto text-3xl md:text-4xl lg:text-5xl font-semibold hover:text-pink-500 pt-8 lg:pt-0"
+          >
+            My Blog
+          </h1>
+          <p
+            class="font-poppins text-center lg:text-start text-lg text-gray-500 py-6"
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+            excepturi cumque temporibu!
+          </p>
+        </div>
+        <div>
+          <img
+            class="rounded-md w-[80vw] pt-10 lg:pt-0"
+            src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsb2dnZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+            alt="image"
+          />
+        </div>
+      </section>
+      <!-- Featured Article -->
+      <section class="w-full h-full">
+        <h1
+          class="text-center text-3xl font-semibold py-10 hover:text-pink-500"
+        >
+          Featured Articles
+        </h1>
+        <div
+          class="max-w-[60vw] mx-auto flex flex-col lg:flex-row gap-6 items-center py-10"
+        >
+          <img
+            class="w-[300px]"
+            src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="img"
+          />
+          <div class="text-center lg:text-start">
+            <a
+              href="/blogpost.html"
+              class="text-lg font-semibold font-roboto hover:text-pink-500"
+            >
+              <h3>Lorem ipsum dolor sit amet.</h3></a
+            >
+
+            <p class="text-md text-gray-600 font-poppins">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+              voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
+              nostrum.
+            </p>
+            <p class="text-md text-gray-600 font-poppins">
+              07 Januaru | 6 min read
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-full h-full">
+        <div
+          class="max-w-[60vw] mx-auto flex flex-col lg:flex-row gap-6 items-center py-6"
+        >
+          <img
+            class="w-[300px]"
+            src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="img"
+          />
+          <div class="text-center lg:text-start">
+            <a
+              href="/blogpost.html"
+              class="text-lg font-semibold font-roboto hover:text-pink-500"
+            >
+              <h3>Lorem ipsum dolor sit amet.</h3>
+            </a>
+
+            <p class="text-md text-gray-600 font-poppins">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+              voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
+              nostrum.
+            </p>
+            <p class="text-md text-gray-600 font-poppins">
+              07 Januaru | 6 min read
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="w-full h-full">
+        <div
+          class="max-w-[60vw] mx-auto flex flex-col lg:flex-row gap-6 items-center py-6"
+        >
+          <img
+            class="w-[300px]"
+            src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="img"
+          />
+          <div class="text-center lg:text-start">
+            <a
+              href="/blogpost"
+              class="text-lg font-semibold font-roboto hover:text-pink-500"
+            >
+              <h3>Lorem ipsum dolor sit amet.</h3>
+            </a>
+
+            <p class="text-md text-gray-600 font-poppins">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+              voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
+              nostrum.
+            </p>
+            <p class="text-md text-gray-600 font-poppins">
+              07 Januaru | 6 min read
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="w-[100vw] bg-gray-300 py-10">
+      <div
+        class="max-w-5xl mx-auto flex flex-col justify-center items-center gap-2"
+      >
+        <p
+          class="text-gray-700 text-md font-poppins font-medium leading-relaxed hover:text-pink-500"
+        >
+          Copywrite@myBlog.com
+        </p>
+        <div
+          class="flex gap-6 font-poppins text-md text-gray-600 font-semibold"
+        >
+          <span class="cursor-pointer hover:text-pink-500">Home</span>
+          <span class="cursor-pointer hover:text-pink-500">About</span>
+          <span class="cursor-pointer hover:text-pink-500">Contact</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
