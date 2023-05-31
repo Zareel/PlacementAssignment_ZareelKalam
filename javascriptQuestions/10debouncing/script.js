@@ -1,7 +1,6 @@
 const input = document.querySelector("#input");
 const defaultText = document.querySelector("#default");
 const debounceText = document.querySelector("#debounce");
-const throttleText = document.querySelector("#throttle");
 
 const updateDebounceText = debounce((text) => {
   debounceText.textContent = text;
