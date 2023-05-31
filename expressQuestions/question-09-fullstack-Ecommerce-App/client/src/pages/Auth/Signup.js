@@ -10,7 +10,9 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [address, setAdress] = useState("");
+  const [address, setAddress] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+
   const navigate = useNavigate();
 
   // form function
@@ -25,6 +27,7 @@ const Signup = () => {
           password,
           phone,
           address,
+          dateOfBirth,
         }
       );
       if (res && res.data.success) {
@@ -41,7 +44,7 @@ const Signup = () => {
   return (
     <Layout title="Signup page">
       <div className="w-full h-full flex justify-center items-center ">
-        <h1 className="text-3xl font-roboto font-semibold py-6">Sign Up!</h1>
+        <h1 className="text-3xl font-roboto font-semibold py-2">Sign Up!</h1>
       </div>
       <section className="w-full flex justify-center ">
         <div className="w-[400px] flex justify-center  pt-10  shadow rounded-md">
@@ -100,9 +103,25 @@ const Signup = () => {
                 id="address"
                 type="text"
                 value={address}
-                onChange={(e) => setAdress(e.target.value)}
+                onChange={(e) => setAddress(e.target.value)}
                 required
-                placeholder="address"
+                placeholder="Address"
+              />
+            </div>
+            <br />
+            <div>
+              <label htmlFor="dateOfBirth" className="text-gray-400">
+                Date of Birth
+              </label>
+              <br />
+              <input
+                className="w-[280px] bg-transparent border border-gray-600 rounded-sm py-1 px-2 text-gray-400"
+                id="dateOfBirth"
+                type="date"
+                value={dateOfBirth}
+                onChange={(e) => setDateOfBirth(e.target.value)}
+                required
+                placeholder="Date of Birth"
               />
             </div>
             <div className="flex justify-center">

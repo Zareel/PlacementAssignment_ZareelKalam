@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    answer: {
+    dateOfBirth: {
       type: String,
       required: true,
     },

@@ -3,13 +3,18 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import { toast } from "react-hot-toast";
 
+import "react-dropdown/style.css";
+
 const Header = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
   const [auth, setAuth] = useAuth();
+  const [dropdown, setDropDown] = useState(false);
+  console.log(dropdown);
 
   const handleLogout = () => {
     setAuth({
@@ -73,14 +78,36 @@ const Header = () => {
                 </NavLink>
               </div>
             ) : (
-              <div>
-                <NavLink
-                  onClick={handleLogout}
-                  to="/signup"
-                  className="border border-violet-500 hover:bg-violet-200 py-1 px-6 my-6 font-poppins rounded-sm cursor-pointer  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
-                >
-                  Logout
-                </NavLink>
+              <div className="relative text-gray-600">
+                <span onClick={() => setDropDown(!dropdown)}>
+                  {auth?.user?.name}
+                  <ArrowDropDownIcon />
+                </span>
+                {dropdown && (
+                  <div>
+                    <ul className="absolute top-10 left-0">
+                      <li>
+                        <NavLink
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`}
+                          className=" font-poppins  cursor-pointer  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
+                        >
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/signup"
+                          className=" font-poppins  cursor-pointer  text-gray-500 hover:text-gray-700 active:text-green-500  duration-300  "
+                        >
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
 

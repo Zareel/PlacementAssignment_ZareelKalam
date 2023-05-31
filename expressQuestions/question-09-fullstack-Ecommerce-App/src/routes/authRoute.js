@@ -20,8 +20,13 @@ router.post("/login", login);
 //test route || method get
 router.get("/testroute", isLoggedIn, isAdmin, test);
 
-// protected route auth => client => user => dashboard
+// protected user route auth => client => user => dashboard
 router.get("/user-auth", isLoggedIn, (req, res) => {
+  res.status(200).json({ ok: true });
+});
+
+//protected admin route auth => client => admin dashboard
+router.get("/admin-auth", isLoggedIn, isAdmin, (req, res) => {
   res.status(200).json({ ok: true });
 });
 

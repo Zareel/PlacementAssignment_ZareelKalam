@@ -6,9 +6,9 @@ import config from "../config/index.js";
 export const signup = async (req, res) => {
   try {
     // get the data from the frontend
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone, address, dateOfBirth } = req.body;
     //validation
-    if (!name || !email || !password || !phone || !address) {
+    if (!name || !email || !password || !phone || !address || !dateOfBirth) {
       return res.send({ message: "All the fields are required" });
     }
     // check if the user is already existing
@@ -28,6 +28,7 @@ export const signup = async (req, res) => {
       email,
       phone,
       address,
+      dateOfBirth,
       password: hashedPassword,
     }).save();
     res.status(201).json({
@@ -80,10 +81,13 @@ export const login = async (req, res) => {
       success: true,
       message: "Logged in Successfully",
       user: {
+        _id: user._id,
         name: user.name,
         email: user.email,
         phone: user.phone,
         address: user.address,
+        dateOfBirth: user.dateOfBirth,
+        role: user.role,
       },
       token,
     });
@@ -103,17 +107,17 @@ export const test = async (req, res) => {
 
 export const forgotPassword = async (req, res) => {
   try {
-    const { email, answer, newPassword } = req.body;
-    if (!email || answer || !newPassword) {
+    const { email, dateOfBirth, newPassword } = req.body;
+    if (!email || dateOfBirth || !newPassword) {
       res.status(400).json({ message: "All the fields are required" });
     }
     //check
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email, dateOfBirth });
     //validation
     if (!user) {
       res.status(401).json({
         success: false,
-        message: "Wrong email or answer",
+        message: "Wrong email or DOB",
       });
     }
     // if user exists hash password

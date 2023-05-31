@@ -7,16 +7,17 @@ import PageNotFound from "./pages/PageNotFound";
 import Signup from "./pages/Auth/Signup";
 import Login from "./pages/Auth/Login";
 import Dashboard from "./pages/user/Dashboard";
-import PrivateRoute from "./components/Routes/Private";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 
 function App() {
   return (
     <div className="font-poppins">
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="" element={<PrivateRoute />}></Route>
+
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
