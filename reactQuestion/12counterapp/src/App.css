@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  color: #7d7676;
+}
+
+.symbol,
+.number {
+  font-size: 40px;
+}
