@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    #display_image {
+      width: 700px;
+      height: 300px;
+      border: 2px gray solid;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+  <body>
+    <input type="file" id="image_input" accept="image/*" />
+    <div id="display_image"></div>
+  </body>
+  <script>
+    const image_input = document.querySelector("#image_input");
+    var uploadedImage = "";
+
+    image_input.addEventListener("change", () => {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        uploadedImage = reader.result;
+        document.querySelector(
+          "#display_image"
+        ).style.backgroundImage = `url(${uploadedImage})`;
+      });
+      reader.readAsDataURL(this.files[0]);
+    });
+  </script>
+</html>

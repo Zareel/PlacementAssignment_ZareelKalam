@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script>
@@ -36,18 +39,18 @@
     <title>My Blog App</title>
   </head>
   <body>
-    <header class="w-full h-[100px]">
+    <header class="w-full h-[70px]">
       <nav
-        class="max-w-[85vw] mx-auto flex justify-between items-center font-poppins py-6 pr-2 lg:pr-0"
+        class="max-w-[85vw] mx-auto flex justify-between items-center font-poppins py-2 pr-2 lg:pr-0"
       >
         <img
-          class="w-[100px] md:w-[150px] lg:w-56"
-          src="./blog.png"
+          class="w-[100px] md:w-[150px] lg:w-[180px]"
+          src="./img/blog.png"
           alt="logo"
         />
         <div class="flex">
           <ul
-            class="hidden lg:flex items-center gap-8 px-10 text-md text-base text-gray-500"
+            class="text-lg  hidden lg:flex items-center gap-8 px-10 text-md text-base text-gray-500"
           >
             <li
               class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
@@ -57,72 +60,59 @@
             <li
               class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
             >
-              <a href="#">About</a>
+              <a href="editor.html">Editor</a>
             </li>
             <li
               class="cursor-pointer hover:text-pink-500 font-poppins font-medium duration-300"
             >
-              <a href="/contact">Contact</a>
+              <a href="./contact.html">Contact</a>
             </li>
           </ul>
 
-          <form action="/search.html" method="get" class="flex">
-            <input
-              type="text"
-              name="query"
-              placeholder="Search for Articles"
-              class="flex flex-grow rounded-sm text-sm md:text-md text-gray-200"
-            />
-            <button
-              class="bg-gray-300 py-1 px-4 rounded-sm text-sm md:text-base lg:text-lg text-gray-700 hover:text-pink-800 hover:bg-pink-300"
-            >
-              Search
-            </button>
-          </form>
+          
+            <a href="./editor.html" class="bg-gray-300 py-1 px-4 rounded-sm text-sm md:text-base lg:text-lg text-gray-700 hover:text-pink-800 hover:bg-pink-300">Write a blog</a>
+     
         </div>
       </nav>
     </header>
     <main class="w-full h-full">
-      <section
-        class="max-w-[60vw] mx-auto flex flex-col-reverse lg:flex-row lg:py-20"
-      >
-        <div class="flex flex-col justify-center items-center lg:items-start">
-          <h1
-            class="font-roboto text-3xl md:text-4xl lg:text-5xl font-semibold hover:text-pink-500 pt-8 lg:pt-0"
-          >
-            My Blog
-          </h1>
-          <p
-            class="font-poppins text-center lg:text-start text-lg text-gray-500 py-6"
-          >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-            excepturi cumque temporibu!
-          </p>
+      <div class="w-full h-[65vh] relative">
+        <div
+          class="h-full bg-[url('./img/banner.jpg')] bg-no-repeat bg-center bg-cover z-0 mt-6"
+        >
+      
         </div>
-        <div>
-          <img
-            class="rounded-md w-[80vw] pt-10 lg:pt-0"
-            src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsb2dnZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-            alt="image"
-          />
+        <div class="w-full text-6xl font-bold z-40 absolute top-[150px] text-gray-600 hover:text-pink-500  left-[35%] border-none w-72">
+          <h1><a href="/editor">Write Your Blog</a></h1>
+          
+          </div>
         </div>
-      </section>
+      </div>
+    </main>
+     <!-- blog section -->
+     
+    <section class="w-full h-full">
+    
+      
       <!-- Featured Article -->
       <section class="w-full h-full">
-        <h1
-          class="text-center text-3xl font-semibold py-10 hover:text-pink-500"
-        >
-          Featured Articles
-        </h1>
+        <div class="max-w-4xl mx-auto text-2xl font-roboto font-medium">
+          <h1
+            class="text-center text-gray-600 text-3xl font-semibold py-10 hover:text-pink-500"
+          >
+            Featured Articles
+          </h1>
+        </div>
+
         <div
-          class="max-w-[60vw] mx-auto flex flex-col lg:flex-row gap-6 items-center py-10"
+          class="max-w-[60vw] mx-auto h-full flex flex-col lg:flex-row gap-6 items-center py-10"
         >
           <img
             class="w-[300px]"
-            src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsb2dnZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
             alt="img"
           />
-          <div class="text-center lg:text-start">
+          <div class="text-center lg:text-start ">
             <a
               href="/blogpost.html"
               class="text-lg font-semibold font-roboto hover:text-pink-500"
@@ -135,9 +125,10 @@
               voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
               nostrum.
             </p>
-            <p class="text-md text-gray-600 font-poppins">
+            <p class="text-md text-gray-600 font-poppins pb-2">
               07 Januaru | 6 min read
             </p>
+            <a href="/" class="bg-gray-300 py-1 px-4 rounded-sm  ">Read</a>
           </div>
         </div>
       </section>
@@ -163,9 +154,10 @@
               voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
               nostrum.
             </p>
-            <p class="text-md text-gray-600 font-poppins">
+            <p class="text-md text-gray-600 font-poppins pb-2">
               07 Januaru | 6 min read
             </p>
+            <a href="/" class="bg-gray-300 py-1 px-4 rounded-sm  ">Read</a>
           </div>
         </div>
       </section>
@@ -191,14 +183,17 @@
               voluptate, deserunt obcaecati amet sunt iste debitis aut ab. Rem,
               nostrum.
             </p>
-            <p class="text-md text-gray-600 font-poppins">
+            <p class="text-md text-gray-600 font-poppins pb-2">
               07 Januaru | 6 min read
             </p>
+            <a href="/" class="bg-gray-300 py-1 px-4 rounded-sm  ">Read</a>
           </div>
         </div>
       </section>
-    </main>
-    <footer class="w-[100vw] bg-gray-300 py-10">
+    </section>
+    <footer
+      class="w-[100vw] bg-gradient-to-r from-violet-200 to-fuchsia-300 py-10"
+    >
       <div
         class="max-w-5xl mx-auto flex flex-col justify-center items-center gap-2"
       >
