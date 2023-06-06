@@ -12,3 +12,7 @@
 ## 7. Music player
 
 ![1](https://github.com/Zareel/PlacementAssignment_ZareelKalam/assets/110910838/60ac6e3d-3800-4db9-845b-0e64eba22829)
+
+## 10. html table
+
+![1](https://github.com/Zareel/PlacementAssignment_ZareelKalam/assets/110910838/69432fb4-4a43-4f78-bacf-a8bd4eb0cc08)
