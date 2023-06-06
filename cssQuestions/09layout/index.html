@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Grid</title>
+  </head>
+  <body>
+    <div class="w-full h-full">
+      <header
+        class="max-w-7xl mx-auto h-28 flex justify-center items-center bg-[#1cc1a6] mt-6"
+      >
+        <nav class="text-white text-5xl font-semibold">Header</nav>
+      </header>
+      <main class="max-w-7xl mx-auto">
+        <div class="h-[630px] grid grid-cols-4 text-center gap-6 py-6">
+          <div
+            class="col-span-1 bg-[#69e367] text-white font-semibold text-5xl pt-32"
+          >
+            Aside
+          </div>
+          <div
+            class="col-span-3 bg-orange-500 place-items-center text-white text-5xl font-semibold pt-32 relative"
+          >
+            Article
+            <div
+              class="w-[60vw] h-[100vh] grid grid-cols-3 mt-40 left-16 absolute"
+            >
+              <div class="w-48 h-48 bg-yellow-400 pt-16">image</div>
+              <div class="w-48 h-48 bg-yellow-400 pt-16">image</div>
+              <div class="w-48 h-48 bg-yellow-400 pt-16">image</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
