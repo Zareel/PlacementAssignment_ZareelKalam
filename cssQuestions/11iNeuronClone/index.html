@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>iNeuron Clone</title>
+  </head>
+  <body>
+    <div class="w-full h-[100%]">
+      <!-- navbar 1 -->
+      <header class="max-w-7xl mx-auto h-28 pt-6 px-4">
+        <nav
+          class="w-full px-2 cursor-pointer flex justify-center gap-4 items-center"
+        >
+          <img
+            class="w-[180px]"
+            src="https://ineuron.ai/images/ineuron-logo.png"
+            alt="logo"
+          />
+          <span class="h-10 flex relative flex-grow text-blue">
+            <input
+              type="text"
+              class="h-full text-base text-blue-900 flex flex-grow px-16 rounded-md outline-none"
+              placeholder="what do you want to learn"
+            />
+            <span
+              class="w-12 h-full flex items-center justify-center cursor pointer absolute left-4 text-blue-900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </span>
+          </span>
+          <button class="text-blue-900 font-semibold">Sign Up</button>
+          <button
+            class="bg-blue-900 px-6 py-2 rounded-md text-white font-semibold"
+          >
+            Sign In
+          </button>
+        </nav>
+      </header>
+      <!-- navbar 2 -->
+      <div class="max-w-7xl mx-auto h-18 px-4 pb-4 flex gap-8">
+        <span
+          class="w-[105px] text-blue-900 font-semibold text-lg tracking-wide px-2 relative"
+          >Courses
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 absolute top-2 right-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg> </span
+        ></span>
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >One Neuron</span
+        >
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >Neuro Lab</span
+        >
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >Job Portal</span
+        >
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >Intership Portal</span
+        >
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >Become a affiliate</span
+        >
+        <span class="text-blue-900 font-semibold text-lg tracking-wide px-2"
+          >Hall of fame</span
+        >
+
+        <span
+          class="w-[105px] text-blue-900 font-semibold text-lg tracking-wide px-2 relative"
+          >company
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 absolute top-2 right-0"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              /></svg></span
+        ></span>
+      </div>
+      <!-- carousal -->
+      <section class="w-[100vw] py-6">
+        <img class="w-full h-[550px]" src="./banner.png" alt="" />
+      </section>
+      <!-- stats -->
+
+      <section class="max-w-7xl mx-auto py-10">
+        <div class="flex flex-col items-center">
+          <h1 class="text-center text-blue-900 text-[50px] font-semibold">
+            "Pure Hardwork, No ShortCuts!"
+          </h1>
+          <div class="h-[3px] w-[150px] bg-orange-600 my-4"></div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-wrap gap-10 py-16">
+          <!-- card-1 -->
+          <div class="w-96 flex flex-col justify-center items-center gap-4">
+            <img
+              class="w-40"
+              src="https://ineuron.ai/images/landing-page/statistics/books-icon.svg"
+              alt="img"
+            />
+            <h2 class="text-blue-900 text-3xl font-bold">300+</h2>
+            <h2 class="text-3xl text-slate-800 font-bold">Different Courses</h2>
+          </div>
+          <!-- card-2 -->
+          <div class="w-96 flex flex-col justify-center items-center gap-4">
+            <img
+              class="w-40"
+              src="https://ineuron.ai/images/landing-page/statistics/student-iocn.svg"
+              alt="img"
+            />
+            <h2 class="text-blue-900 text-3xl font-bold">4,00,000+</h2>
+            <h2 class="text-3xl text-slate-800 font-bold">Different Courses</h2>
+          </div>
+          <!-- card 3 -->
+          <div class="w-96 flex flex-col justify-center items-center gap-4">
+            <img
+              class="w-40"
+              src="https://ineuron.ai/images/landing-page/statistics/credit-card-icon.svg"
+              alt="img"
+            />
+            <h2 class="text-blue-900 text-3xl font-bold">10,000+</h2>
+            <h2 class="text-3xl text-slate-800 font-bold">Different Courses</h2>
+          </div>
+        </div>
+      </section>
+      <!-- Achievers -->
+      <section class="w-full mx-auto py-10 bg-gray-300">
+        <div class="py-6">
+          <h1 class="text-center text-blue-900 text-[50px] font-semibold">
+            Our Achiever's Work With
+          </h1>
+        </div>
+        <div class="max-w-7xl mx-auto flex gap-16 py-16">
+          <span
+            ><img
+              class="w-[200px] h-[30px]"
+              src="https://ineuron.ai/images/landing-page/companies/unilog.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              class="w-[200px] h-[30px]"
+              src="https://ineuron.ai/images/landing-page/companies/sopra-banking-software.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              class="w-[200px] h-[30px]"
+              src="https://ineuron.ai/images/landing-page/companies/wissen.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              class="w-[200px] h-[30px]"
+              src="https://ineuron.ai/images/landing-page/companies/biocube.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              class="w-[200px] h-[30px]"
+              src="https://ineuron.ai/images/landing-page/companies/hitachi.png"
+              alt=""
+          /></span>
+        </div>
+      </section>
+      <!-- footer -->
+      <footer></footer>
+    </div>
+  </body>
+</html>
